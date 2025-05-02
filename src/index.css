@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-black text-white min-h-screen;
+  }
+
+  /* Override any white backgrounds in components */
+  .bg-white {
+    @apply bg-gray-900 text-gray-100;
+  }
+  
+  .bg-white\/20 {
+    @apply bg-gray-900/30;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply bg-gray-900/40 backdrop-blur-lg border border-purple-500/20 text-white font-medium;
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.3);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+  }
+  
+  .purple-card {
+    @apply bg-gray-900/80 border border-purple-500/30;
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.4);
+  }
+}
+
+@layer utilities {
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+  }
+  
+  .perspective {
+    perspective: 1000px;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+
+  .purple-glow {
+    box-shadow: 0 0 12px rgba(147, 51, 234, 0.35);
+  }
+
+  .purple-glow-sm {
+    box-shadow: 0 0 8px rgba(147, 51, 234, 0.25);
+  }
+}
